@@ -198,8 +198,33 @@ p {
 
   #chat{
     width: 80vw;
-    height: 4vh;
-    margin-top: 90vh;
+    height: 6vh;
+    margin-top: 85vh;
     background-color: #464646;
-    
+    padding-left: 2vw;
+    padding-top: 1vh;
+    font-family: "Inria Sans", sans-serif;
+ }
+
+ input::placeholder {
+    font-size: 26px;
+    font: inria-san-regular-italic;
+    font-family: Inria Sans;
+    color: #e3abff;
+}
+
+  #send-button{
+    width: 5.5vh;
+    height: 5.5vh;
+    margin-top: 90vh;
+    border-radius: 100%;
+    margin-left: 1%;
+    background-color: #464646;
+    color: #E3BAFF;
+  }
+
+  #send-button:hover{
+    cursor: pointer;
+    background-color: #000000;
+    color: #E36AFF;
   }
