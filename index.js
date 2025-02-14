@@ -11,6 +11,20 @@ signUp.addEventListener("click", ()=>
     {
         open('signup.html', "_blank");
     });
+
+    // For login.html
+const loginButton = document.getElementById('button3'); // Login button
+    loginButton.addEventListener("click", () => {
+        open('landing_page.html', "_blank");
+    });
+
+
+// For signup.html
+const signUpButton = document.getElementById('button4'); // Sign-up button
+    signUpButton.addEventListener("click", () => {
+        open('landing_page.html', "_blank");
+    });
+
 function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
         document.getElementById("main").style.marginRigh = "250px";
@@ -21,3 +35,5 @@ function openNav() {
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("main").style.marginLeft = "0";
       }
+
+    
