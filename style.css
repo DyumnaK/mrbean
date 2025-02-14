@@ -1,98 +1,102 @@
-body {
-    background-color: #1e1e1e;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: "Inria Sans", sans-serif;
+.inria-sans-bold {
+    font-family: "Inria Sans", serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
-.container {
+.inria-sans-light-italic {
+    font-family: "Inria Sans", serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.inria-sans-regular-italic {
+    font-family: "Inria Sans", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.inria-sans-bold-italic {
+    font-family: "Inria Sans", serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+body {
     text-align: center;
-    color: #ffffff;
+    background-color: #1e1e1e;
+    font-family: "Inria Sans", sans-serif;
+    height: 100vh;
+    margin: 0;
 }
 
 h1 {
     color: #ffffff;
-    font: inria-sans-bold;
-    font-size: 64px;
+    font: inherit;
+    font-weight: 700;
+    text-align: center;
+    font-size: 4rem;
+    padding-top: 15vh;
+    padding-right: 10%;
+    padding-left: 10%;
     margin: 0;
 }
 
 h2 {
     color: #b698cb;
-    font: inria-sans-regular;
-    font-size: 32px;
+    font: inherit;
+    font-weight: 400;
+    font-size: 2rem;
+    text-align: center;
+    padding: 1rem 10%;
     margin: 0;
 }
 
-.button-container {
-    margin: auto;
-    width: 40vw;
+#button1:hover {
+    background-color: #9e70df;
+    cursor: pointer;
 }
 
-button {
-    font: inria-sans-bold;
-    font-size: 24px;
+#button1 {
+    font: inherit;
     font-weight: 800;
+    text-align: center;
+    font-size: 1.5rem;
     color: #000000;
     background-color: #b698cb;
     border-radius: 10px;
-    border-color: #b698cb;
-    cursor: pointer;
-    width: 40%;
-    padding: 7px;
-}
-
-button:hover {
-    background-color: #9e70df;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 1rem auto;
 }
 
 p {
     color: #b698cb;
-    font: inria-sans-regular;
-    font-size: 32px;
-    margin: 10px 0; /* Adjusted margin to reduce the gap */
+    font: inherit;
+    font-weight: 400;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0.5rem auto;
 }
 
-<<<<<<< HEAD
-#button2:hover{
+#button2:hover {
     background-color: #9e70df;
     cursor: pointer;
 }
 
 #button2 {
-    font: inria-sans-bold;
-    font-family: Inria Sans;
+    font: inherit;
     font-weight: 800;
     text-align: center;
-    font-size: 24px;
+    font-size: 1.5rem;
     color: #000000;
     background-color: #b698cb;
     border-radius: 10px;
-    border-color: #b698cb;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 60px;
-    padding-right: 60px;
-    margin-left: -60px;
-    margin-top: 10px;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 1rem auto;
 }
 
-/* login page */
-ody {
-    margin: 0;
-    padding: 0;
-    background-color: #1e1e1e; /* Dark background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-family: "Inria Sans", sans-serif;
-}
-
-/* Container for centering the card */
 .container {
     display: flex;
     justify-content: center;
@@ -101,70 +105,101 @@ ody {
     height: 100%;
 }
 
-/* Card styles */
 .card {
     background-color: #3e3e3e;
     border-radius: 20px;
-    padding: 40px;
-    width: 300px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 20rem;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
-/* Profile image styles */
 .profile-img {
-    width: 100px;
-    height: 100px;
+    width: 6rem;
+    height: 6rem;
     border-radius: 50%;
-    margin-bottom: 50px;
+    margin-bottom: 2rem;
 }
 
-/* Welcome text styles */
 .welcome-text {
     color: #F3E0FF;
-    font-size: 24px;
-    font: inria-sans-bold;
-    font-family: Inria Sans;
-    margin-left: 24px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
 }
 
-/* Input field styles */
 .input-field {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
     border: none;
-    border-radius: 20px;
+    border-radius: 1rem;
     background-color: #b698cb;
     color: #272727;
-    font-size: 16px;
-    font: inria-sans-bold;
-    font-family: Inria Sans;
-    font-weight: 800;
+    font-size: 1rem;
+    font-weight: 700;
     outline: none;
     text-align: center;
 }
 
-/* Signup button styles */
 .signup-button {
     width: 100%;
-    padding: 10px;
+    padding: 0.75rem;
     border: none;
-    border-radius: 12px;
+    border-radius: 0.75rem;
     background-color: #e3b8f1;
     color: #272727;
-    font-size: 18px;
-    font: inria-sans-bold;
-    font-family: Inria Sans;
-    font-weight: 800;
+    font-size: 1rem;
+    font-weight: 700;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 1rem;
     transition: background-color 0.3s ease;
 }
 
-/* Button hover effect */
 .signup-button:hover {
     background-color: #caa4df;
 }
-=======
->>>>>>> 5f91c1bfd2cd258b20fda7f5afe5f5f4d1dca30b
+
+.login-button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.75rem;
+    background-color: #e3b8f1;
+    color: #272727;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #caa4df;
+}
+
+/* Landing page */
+#bars {
+    position: absolute;
+    top: 1.5vh;
+    right: 1.5vw;
+    width: 2.5%;
+  }
+  
+  #Profile {
+    position: absolute;
+    top: 1.5vh;
+    left: 1.5vw;
+    width: 2.5%;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  #chat{
+    width: 80vw;
+    height: 4vh;
+    margin-top: 90vh;
+    background-color: #464646;
+    
+  }
