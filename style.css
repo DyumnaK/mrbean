@@ -1,90 +1,62 @@
-.inria-sans-bold {
-    font-family: "Inria Sans", serif;
-    font-weight: 700;
-    font-style: normal;
-  }
-  
-  .inria-sans-light-italic {
-    font-family: "Inria Sans", serif;
-    font-weight: 300;
-    font-style: italic;
-  }
-  
-  .inria-sans-regular-italic {
-    font-family: "Inria Sans", serif;
-    font-weight: 400;
-    font-style: italic;
-  }
-  
-  .inria-sans-bold-italic {
-    font-family: "Inria Sans", serif;
-    font-weight: 700;
-    font-style: italic;
-  }
-
 body {
-    text-align: center;
     background-color: #1e1e1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: "Inria Sans", sans-serif;
+}
+
+.container {
+    text-align: center;
+    color: #ffffff;
 }
 
 h1 {
     color: #ffffff;
     font: inria-sans-bold;
-    font-family: Inria Sans;
-    text-align: center;
     font-size: 64px;
-    padding-top: 250px;
-    padding-right: 150px;
-    padding-left: 80px;
-    margin: 0px;
+    margin: 0;
 }
 
 h2 {
     color: #b698cb;
     font: inria-sans-regular;
-    font-family: Inria Sans;
     font-size: 32px;
-    vertical-align: middle;
-    padding-right: 150px;
-    padding-bottom: 50px;
-    padding-left: 80px;
-    margin: 0px;
-}
-#button1:hover{
-    background-color: #9e70df;
-    cursor: pointer;
+    margin: 0;
 }
 
-#button1 {
+.button-container {
+    margin: auto;
+    width: 40vw;
+}
+
+button {
     font: inria-sans-bold;
-    font-family: Inria Sans;
-    text-align: center;
     font-size: 24px;
     font-weight: 800;
     color: #000000;
     background-color: #b698cb;
     border-radius: 10px;
     border-color: #b698cb;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 70px;
-    padding-right: 70px; 
-    margin-bottom: 10px;
-    margin-left: -60px;
+    cursor: pointer;
+    width: 40%;
+    padding: 7px;
 }
 
-p{
+button:hover {
+    background-color: #9e70df;
+}
+
+p {
     color: #b698cb;
     font: inria-sans-regular;
-    font-family: Inria Sans;
     font-size: 32px;
-    vertical-align: middle;
-    padding-right: 140px;
-    padding-left: 80px;
-    padding-bottom: 10px;
-    margin: 0px;
+    margin: 10px 0; /* Adjusted margin to reduce the gap */
 }
 
+<<<<<<< HEAD
 #button2:hover{
     background-color: #9e70df;
     cursor: pointer;
@@ -194,3 +166,5 @@ ody {
 .signup-button:hover {
     background-color: #caa4df;
 }
+=======
+>>>>>>> 5f91c1bfd2cd258b20fda7f5afe5f5f4d1dca30b
