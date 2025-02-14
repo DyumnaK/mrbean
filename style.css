@@ -1,5 +1,53 @@
+.inria-sans-bold {
+    font-family: "Inria Sans", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .inria-sans-light-italic {
+    font-family: "Inria Sans", serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .inria-sans-regular-italic {
+    font-family: "Inria Sans", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .inria-sans-bold-italic {
+    font-family: "Inria Sans", serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+
 body {
     text-align: center;
-    background-color: black;
+    background-color: #1e1e1e;
+}
+
+h1 {
+    color: #ffffff;
+    font: inria-sans-bold;
+    font-family: Inria Sans;
+    text-align: center;
+    font-size: 64px;
+    padding-top: 250px;
+    padding-right: 150px;
+    padding-left: 80px;
+    margin: 0px;
+}
+
+h2 {
+    color: #b698cb;
+    font: inria-sans-regular;
+    font-family: Inria Sans;
+    font-size: 32px;
+    vertical-align: middle;
+    padding-right: 150px;
+    padding-bottom: 300px;
+    padding-left: 80px;
+    margin: 0px;
 }
 
