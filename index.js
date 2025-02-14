@@ -27,7 +27,7 @@ const signUpButton = document.getElementById('button4'); // Sign-up button
 
 function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
-        document.getElementById("main").style.marginRigh = "250px";
+        document.getElementById("main").style.marginRight = "250px";
       }
       
       /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
