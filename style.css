@@ -1,3 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    text-align: center;
+    background-color: #1e1e1e;
+    font-family: "Inria Sans", sans-serif;
+    height: 100vh;
+    overflow: hidden; /* Prevents unnecessary scrollbars */
+}
+
 .inria-sans-bold {
     font-family: "Inria Sans", serif;
     font-weight: 700;
@@ -22,45 +36,23 @@
     font-style: italic;
 }
 
-body {
-    text-align: center;
-    background-color: #1e1e1e;
-    font-family: "Inria Sans", sans-serif;
-    height: 100vh;
-    margin: 0;
-}
-
 h1 {
     color: #ffffff;
-    font: inherit;
     font-weight: 700;
-    text-align: center;
     font-size: 4rem;
     padding-top: 15vh;
-    padding-right: 10%;
-    padding-left: 10%;
-    margin: 0;
+    margin: 0 10%;
 }
 
 h2 {
     color: #b698cb;
-    font: inherit;
     font-weight: 400;
     font-size: 2rem;
-    text-align: center;
     padding: 1rem 10%;
-    margin: 0;
 }
 
-#button1:hover {
-    background-color: #9e70df;
-    cursor: pointer;
-}
-
-#button1 {
-    font: inherit;
+#button1, #button2 {
     font-weight: 800;
-    text-align: center;
     font-size: 1.5rem;
     color: #000000;
     background-color: #b698cb;
@@ -68,33 +60,18 @@ h2 {
     border: none;
     padding: 1rem 2rem;
     margin: 1rem auto;
+}
+
+#button1:hover, #button2:hover {
+    background-color: #9e70df;
+    cursor: pointer;
 }
 
 p {
     color: #b698cb;
-    font: inherit;
     font-weight: 400;
     font-size: 2rem;
-    text-align: center;
     margin: 0.5rem auto;
-}
-
-#button2:hover {
-    background-color: #9e70df;
-    cursor: pointer;
-}
-
-#button2 {
-    font: inherit;
-    font-weight: 800;
-    text-align: center;
-    font-size: 1.5rem;
-    color: #000000;
-    background-color: #b698cb;
-    border-radius: 10px;
-    border: none;
-    padding: 1rem 2rem;
-    margin: 1rem auto;
 }
 
 .container {
@@ -129,91 +106,81 @@ p {
     margin-bottom: 1.5rem;
 }
 
-.input-field {
+.input-field, .signup-button, .login-button {
     width: 100%;
     padding: 0.75rem;
-    margin: 0.5rem 0;
     border: none;
-    border-radius: 1rem;
-    background-color: #b698cb;
-    color: #272727;
+    border-radius: 0.75rem;
     font-size: 1rem;
     font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.input-field {
+    background-color: #b698cb;
+    color: #272727;
     outline: none;
     text-align: center;
 }
 
-.signup-button {
-    width: 100%;
-    padding: 0.75rem;
-    border: none;
-    border-radius: 0.75rem;
+.signup-button, .login-button {
     background-color: #e3b8f1;
     color: #272727;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
     margin-top: 1rem;
-    transition: background-color 0.3s ease;
 }
 
-.signup-button:hover {
+.signup-button:hover, .login-button:hover {
     background-color: #caa4df;
 }
 
-.login-button {
-    width: 100%;
-    padding: 0.75rem;
-    border: none;
-    border-radius: 0.75rem;
-    background-color: #e3b8f1;
-    color: #272727;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease;
-}
-
-.login-button:hover {
-    background-color: #caa4df;
-}
-
-/* Landing page */
 #bars {
     position: absolute;
     top: 1.5vh;
     right: 1.5vw;
     width: 2.5%;
-  }
-  
-  #Profile {
+    cursor: pointer;
+}
+
+#Profile {
     position: absolute;
     top: 1.5vh;
     left: 1.5vw;
     width: 2.5%;
     border-radius: 50%;
     cursor: pointer;
-  }
+}
 
-  #chat{
+#chat{
     width: 80vw;
     height: 6vh;
     margin-top: 85vh;
     background-color: #464646;
-    padding-left: 2vw;
-    padding-top: 1vh;
+    padding: 10px;
     font-family: "Inria Sans", sans-serif;
- }
-
- input::placeholder {
-    font-size: 26px;
-    font: inria-san-regular-italic;
-    font-family: Inria Sans;
+    font-size: 1.5rem;
     color: #e3abff;
+    border: none;
+    border-radius: 24px;
+   
+ }
+.sidebar-btn{
+    background-color: #E3BAFF;
+    border: none;
+    border-radius: 18px;
+    margin-block: 10px;
+    width: 70%;
+    margin-inline: auto;
+    text-align: center;
+}
+input::placeholder {
+    font-size: 1.5rem;
+    font-family: "Inria Sans";
+    color: #e3abff65;
+    vertical-align: middle;
 }
 
-  #send-button{
+#send-button{
     width: 5.5vh;
     height: 5.5vh;
     margin-top: 90vh;
@@ -221,6 +188,7 @@ p {
     margin-left: 1%;
     background-color: #464646;
     color: #E3BAFF;
+    margin-block: auto;
   }
 
   #send-button:hover{
@@ -228,3 +196,52 @@ p {
     background-color: #000000;
     color: #E36AFF;
   }
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-right 0.5s;
+    padding: 16px;
+    margin-top: -10vh; /* Adjust this value to move it up */
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    
+    .sidenav a {
+        font-size: 18px;
+    }
+}
