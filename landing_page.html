@@ -3,37 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Interface</title>
+    <title>Chatbot - Career Roadmap</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+     <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        text-align: center;
+        background: linear-gradient(45deg, #1e1e1e, #4e4e4e);
+        font-family: "Inria Sans", sans-serif;
+        height: 100vh;
+        overflow: hidden;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        transition: background 0.5s;
+    }
+
+    h2 {
+        font-size: 3rem;
+        color: #b698cb;
+        margin-bottom: 20px;
+        letter-spacing: 1.5px;
+    }
+
+    #chat-container {
+        width: 90%;
+        max-width: 800px;
+        height: 70vh;
+        overflow-y: auto;
+        border: 1px solid #ddd;
+        padding: 20px;
+        background: #3e3e3e;
+        border-radius: 15px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s ease;
+    }
+
+    .chat-message {
+        padding: 12px;
+        margin: 8px 0;
+        border-radius: 12px;
+        font-size: 0.8rem;
+        max-width: 80%;
+        transition: all 0.3s ease;
+        font-size: 0.8rem;
+    }
+
+    .user-message {
+        background: #b698cb;
+        color: #000000;
+        margin-left: auto;
+        border-radius: 20px 20px 0 20px;
+        animation: slideIn 0.5s ease-out;
+        font-size: 0.8rem;
+    }
+
+    .bot-message {
+        background: #f1f1f1;
+        color: #333;
+        border-radius: 20px 20px 20px 0;
+        animation: slideIn 0.5s ease-out;
+        font-size: 0.8rem;
+    }
+
+    .bold {
+        font-weight: bold;
+        color: #ffeb3b;
+    }
+
+    .highlight {
+        background-color: #fbd75b;
+        padding: 0.5rem;
+        border-radius: 5px;
+    }
+
+    .italic {
+        font-style: italic;
+        color: #9e70df;
+    }
+
+    #chat {
+        width: 80vw;
+        height: 6vh;
+        background-color: #464646;
+        padding: 10px;
+        font-size: 0.8rem;
+        color: #e3abff;
+        border: none;
+        border-radius: 24px;
+        transition: background-color 0.3s ease;
+    }
+
+    #fetchButton, #downloadButton {
+        font-weight: 800;
+        font-size: 1.5rem;
+        color: #000000;
+        background-color: #b698cb;
+        border-radius: 10px;
+        border: none;
+        padding: 1rem 2rem;
+        margin: 1rem auto;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s, box-shadow 0.3s ease;
+    }
+
+    #fetchButton:hover, #downloadButton:hover {
+        background-color: #9e70df;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes slideIn {
+        0% {
+            transform: translateX(10px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    .profile-pic {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    .spinner {
+        border: 4px solid transparent;
+        border-top: 4px solid #b698cb;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .chat-message .message-content {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .message-content p {
+        margin: 0;
+    }
+
+    .chat-message img {
+        margin-right: 10px;
+    }
+
+    canvas {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+</style>
 </head>
 <body>
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#" class = "sidebar-btn">My Profile</a>
-        <a href="#" class = "sidebar-btn">History</a>
-        
-        <a href="#" class = "sidebar-btn" style = "background-color: rgb(255, 158, 158); color: red">Logout</a>
-    </div>
-
-    <img src="profile.jpg" id="Profile" />
-    <img src="bars-solid.svg" id="bars" onclick="openNav()"/><br>
-
-    <div id="main">
-        <input id="chat" type="text" placeholder="Enter your message here..." />
-        <button id="send-button">↑</button>
-    </div>
-
+    <h2>Career Chatbot</h2>
+    <div id="chat-container"></div>
+    <input type="text" id="profession" placeholder="Ask about a profession...">
+    <button id="fetchButton">Send</button>
+    <button id="generateHierarchy">Generate Hierarchy</button>
+    <div id="jsonOutput"></div>
+    
     <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("main").style.marginRight = "250px";
-            document.getElementById("chat").style.width = "90%";
-        }
+        const API_KEY = "AIzaSyDax8qPUWHX6af1L83cDqoe_N2-PczJ1oE";
+        const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${API_KEY}`;
 
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginRight = "0";
+        document.getElementById('fetchButton').addEventListener('click', fetchData);
+        document.getElementById('generateHierarchy').addEventListener('click', generateHierarchy);
+
+        async function generateHierarchy() {
+            const prompt = "Generate a hierarchical JSON tree with a root node having two children, each child having up to two sub-children.";
+            
+            try {
+                const response = await fetch(GEMINI_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`API Error: ${response.status} - ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                const jsonResponse = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+                
+                try {
+                    const formattedJSON = JSON.parse(jsonResponse);
+                    document.getElementById("jsonOutput").textContent = JSON.stringify(formattedJSON, null, 2);
+                } catch (err) {
+                    document.getElementById("jsonOutput").textContent = "Invalid JSON format received.";
+                }
+            } catch (error) {
+                console.error("Error fetching JSON:", error);
+                document.getElementById("jsonOutput").textContent = "Failed to generate hierarchy.";
+            }
         }
     </script>
 </body>
